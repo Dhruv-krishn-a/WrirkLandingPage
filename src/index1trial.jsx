@@ -35,7 +35,7 @@ Notifications`,
     },
     {
       icon: Gift,
-      title: "Free to Join",
+      title: "Connect with Researchers",
       desc: "Engage with a community of PhD scholars, faculty, and research enthusiasts.",
       accent: "#22b14c",
       bg: "rgba(34,177,76,0.10)",
@@ -43,8 +43,8 @@ Notifications`,
   ];
 
   return (
-    <main className="h-screen w-full bg-white flex flex-col overflow-hidden">
-      <section className="relative w-full h-full flex flex-col overflow-hidden bg-white">
+    <main className="h-dvh w-full bg-white flex flex-col overflow-hidden">
+      <section className="relative w-full h-dvh flex flex-col overflow-hidden bg-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(214,242,255,0.55),transparent_38%),radial-gradient(circle_at_20%_85%,rgba(214,242,255,0.35),transparent_18%),radial-gradient(circle_at_92%_74%,rgba(214,242,255,0.28),transparent_16%),linear-gradient(180deg,#ffffff_0%,#fbfdff_100%)]" />
 
         <div className="absolute left-0 top-0 h-32 w-32 md:h-40 md:w-40 rounded-br-[140px] bg-[#2d89c6] overflow-hidden">
@@ -60,127 +60,119 @@ Notifications`,
         <div className="absolute left-4 top-[32%] h-9 w-9 rounded-full bg-[#e6f4ff] opacity-80" />
         <div className="absolute right-2 bottom-10 h-12 w-12 rounded-full bg-[#e6f4ff] opacity-80" />
 
-        <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-1 flex-col justify-center px-4 py-4 md:px-8 lg:px-12 h-full overflow-hidden">
+        {/* Floating Research Nodes SVG (Collaboration/Co-authorship Theme) */}
+        <div className="absolute right-[4%] bottom-[12%] opacity-35 pointer-events-none hidden lg:block animate-float">
+          <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="50" r="5" fill="#18a6c9" />
+            <circle cx="150" cy="30" r="7" fill="#1976d2" />
+            <circle cx="90" cy="110" r="9" fill="#6f42c1" />
+            <circle cx="130" cy="150" r="4" fill="#22b14c" />
+            <circle cx="40" cy="140" r="6" fill="#18a6c9" />
+            <path d="M30 50L150 30" stroke="#1976d2" strokeWidth="1" strokeDasharray="3 3" />
+            <path d="M30 50L90 110" stroke="#18a6c9" strokeWidth="1" strokeDasharray="3 3" />
+            <path d="M150 30L90 110" stroke="#6f42c1" strokeWidth="1" strokeDasharray="3 3" />
+            <path d="M90 110L130 150" stroke="#22b14c" strokeWidth="1" strokeDasharray="3 3" />
+            <path d="M40 140L90 110" stroke="#18a6c9" strokeWidth="1" strokeDasharray="3 3" />
+          </svg>
+        </div>
+
+        {/* Floating Science Atom SVG */}
+        <div className="absolute left-[5%] top-[25%] opacity-20 pointer-events-none hidden lg:block animate-float-slow">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="60" cy="60" rx="50" ry="18" stroke="#18a6c9" strokeWidth="1" transform="rotate(30 60 60)" />
+            <ellipse cx="60" cy="60" rx="50" ry="18" stroke="#1976d2" strokeWidth="1" transform="rotate(-30 60 60)" />
+            <ellipse cx="60" cy="60" rx="50" ry="18" stroke="#6f42c1" strokeWidth="1" transform="rotate(90 60 60)" />
+            <circle cx="60" cy="60" r="6" fill="#1698c7" />
+          </svg>
+        </div>
+
+        <div className="content-wrapper relative z-10 w-full max-w-5xl mx-auto flex flex-1 flex-col justify-center items-center px-4 py-3 md:px-8 lg:px-12 gap-3 lg:gap-3.5 animate-fade-in-up">
           
           {/* Top Centered Brand Header */}
-          <div className="flex flex-col items-center text-center mt-1 lg:mt-3 shrink-0">
-            <img src={wrirkLogo} alt="WRIRK Logo" className="h-28 sm:h-36 md:h-44 object-contain" />
+          <div className="flex flex-col items-center text-center mt-0.5 lg:mt-1 shrink-0">
+            <img src={wrirkLogo} alt="WRIRK Logo" className="logo-img h-16 sm:h-20 md:h-24 object-contain" />
 
-            <div className="mt-1 flex items-center gap-3 text-xs font-semibold text-[#12203a] sm:text-sm">
+            <div className="mt-0.5 flex items-center gap-3 text-xs font-semibold text-[#12203a] sm:text-sm">
               <span className="h-px w-12 bg-[#1698c7] sm:w-16" />
               <span>Your Research Assistant</span>
               <span className="h-px w-12 bg-[#1698c7] sm:w-16" />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center w-full mt-3 lg:mt-6 lg:mb-auto max-w-6xl mx-auto">
-            
-            {/* Left Column: Headline, Banner, and Button */}
-            <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left gap-4 lg:gap-6">
-              
-              {/* Main Headline */}
-              <div className="max-w-xl">
-                <h1 className="text-[2rem] sm:text-[2.4rem] lg:text-[3rem] font-black leading-[1.05] tracking-[-0.03em] text-[#0b1c4b]">
-                  Join the <span className="text-[#1698c7]">WRIRK</span>
-                  <br /> Co-Authorship Community
-                </h1>
-                <p className="text-xs sm:text-sm lg:text-base leading-normal text-[#2c3a52] mt-2.5">
-                  Get regular updates on research collaboration opportunities directly on{' '}
-                  <span className="font-semibold text-[#25d366]">WhatsApp</span>.
-                </p>
-              </div>
-
-              {/* Community Banner */}
-              <div className="w-full max-w-xl rounded-[24px] border border-[#d8efdf] bg-[#f3fbf5]/95 p-4 sm:p-5 shadow-[0_8px_30px_rgba(15,23,42,0.06)] backdrop-blur-sm">
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#d8f0fb] shadow-[0_4px_12px_rgba(15,23,42,0.06)]">
-                      <Users size={22} className="text-[#1698c7]" />
-                    </div>
-                    <div>
-                      <p className="text-xs sm:text-sm font-extrabold text-[#25344d]">Join 1000+ Researchers</p>
-                      <p className="text-[10px] sm:text-xs text-[#46556d] mt-0.5 leading-relaxed">
-                        A growing community of <span className="font-bold text-[#16849f]">Researchers, PhD Scholars &amp; Faculty Members</span> across India.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="hidden sm:block shrink-0">
-                    <img src={whatsappLogo} alt="WhatsApp Logo" className="h-7 w-7 object-contain" />
-                  </div>
-                </div>
-              </div>
-
-              {/* WhatsApp Join Button (Desktop only) */}
-              <div className="hidden lg:block w-full max-w-xl mt-1">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex w-full items-center justify-between gap-4 rounded-[24px] border border-[#1fb84f] bg-[linear-gradient(180deg,#2be15f_0%,#10b43b_100%)] px-6 py-4 shadow-[0_12px_28px_rgba(19,179,60,0.25)] transition-transform duration-200 hover:scale-[1.01] active:scale-[0.99]"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-sm overflow-hidden p-1.5">
-                      <img src={whatsappLogo} alt="WhatsApp Logo" className="h-full w-full object-contain" />
-                    </div>
-                    <span className="text-base font-extrabold text-white tracking-wide">
-                      Join WhatsApp Community
-                    </span>
-                  </div>
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#0ca73a] shadow-sm">
-                    <ArrowRight size={20} strokeWidth={3} />
-                  </div>
-                </a>
-              </div>
-
-            </div>
-
-            {/* Right Column: Features Grid */}
-            <div className="lg:col-span-5 w-full flex flex-col justify-center">
-              <div className="grid grid-cols-2 gap-4 sm:gap-6 w-full">
-                {features.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <article
-                      key={item.title}
-                      className="rounded-[24px] border border-white/90 bg-white/95 p-4 sm:p-5 text-center shadow-[0_10px_30px_rgba(15,23,42,0.06)] backdrop-blur-sm flex flex-col items-center justify-center min-h-[110px] sm:min-h-[140px] lg:min-h-[160px] transition-all hover:scale-[1.02] hover:shadow-[0_15px_35px_rgba(15,23,42,0.1)]"
-                    >
-                      <div
-                        className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full shadow-[0_4px_12px_rgba(15,23,42,0.06)]"
-                        style={{ backgroundColor: item.bg }}
-                      >
-                        <Icon size={22} strokeWidth={1.9} color={item.accent} />
-                      </div>
-                      <h2 className="whitespace-pre-line text-xs sm:text-sm font-extrabold leading-tight text-[#10193b]">
-                        {item.title}
-                      </h2>
-                      <p className="text-[10px] sm:text-xs leading-normal text-[#46556d] mt-1.5">
-                        {item.desc}
-                      </p>
-                    </article>
-                  );
-                })}
-              </div>
-            </div>
-
+          {/* Main Headline */}
+          <div className="text-center max-w-2xl animate-fade-in-up [animation-delay:150ms] opacity-0">
+            <h1 className="headline-text text-[1.5rem] sm:text-[1.8rem] lg:text-[2.2rem] font-black leading-[1.1] tracking-[-0.03em] text-[#0b1c4b]">
+              Join the <span className="text-[#1698c7]">WRIRK</span> Co-Authorship Community
+            </h1>
+            <p className="desc-text text-[11px] sm:text-xs lg:text-sm leading-normal text-[#2c3a52] mt-1">
+              Get regular updates on research collaboration opportunities directly on{' '}
+              <span className="font-semibold text-[#25d366]">WhatsApp</span>.
+            </p>
           </div>
 
-          {/* WhatsApp Join Button (Mobile/Tablet only) */}
-          <div className="lg:hidden w-full max-w-xl mx-auto mt-4 pb-2">
+          {/* Features Grid (4 columns on desktop, 2 columns on mobile/tablet) */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto animate-fade-in-up [animation-delay:300ms] opacity-0">
+            {features.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article
+                  key={item.title}
+                  className="card-el group rounded-[20px] border border-white/95 bg-white/95 p-3 sm:p-4 text-center shadow-[0_6px_20px_rgba(15,23,42,0.04)] backdrop-blur-sm flex flex-col items-center justify-center min-h-[100px] sm:min-h-[120px] lg:min-h-[135px] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-[0_12px_25px_rgba(15,23,42,0.06)] hover:border-slate-200"
+                >
+                  <div
+                    className="card-icon mx-auto mb-1.5 flex h-9 w-9 items-center justify-center rounded-full shadow-[0_4px_10px_rgba(15,23,42,0.05)] transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: item.bg }}
+                  >
+                    <Icon size={18} strokeWidth={1.9} color={item.accent} />
+                  </div>
+                  <h2 className="card-title whitespace-pre-line text-xs sm:text-sm font-extrabold leading-tight text-[#10193b]">
+                    {item.title}
+                  </h2>
+                  <p className="card-desc text-[10px] sm:text-xs leading-normal text-[#46556d] mt-1.5">
+                    {item.desc}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
+
+          {/* Community Banner */}
+          <div className="banner-el w-full max-w-lg rounded-[20px] border border-[#d8efdf] bg-[#f3fbf5]/95 p-3 sm:p-3.5 shadow-[0_6px_20px_rgba(15,23,42,0.04)] backdrop-blur-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(37,211,102,0.12)] hover:scale-[1.005] hover:border-[#25d366] mx-auto animate-fade-in-up [animation-delay:450ms] opacity-0">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center gap-4 text-left">
+                <div className="banner-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d8f0fb] shadow-[0_4px_10px_rgba(15,23,42,0.04)]">
+                  <Users size={18} className="text-[#1698c7]" />
+                </div>
+                <div>
+                  <p className="text-xs sm:text-sm font-extrabold text-[#25344d]">Join 1000+ Researchers</p>
+                  <p className="text-[10px] sm:text-xs text-[#46556d] mt-0.5 leading-relaxed">
+                    A growing community of <span className="font-bold text-[#16849f]">Researchers, PhD Scholars &amp; Faculty Members</span> across India.
+                  </p>
+                </div>
+              </div>
+              <div className="hidden sm:block shrink-0">
+                <img src={whatsappLogo} alt="WhatsApp Logo" className="h-7 w-7 object-contain" />
+              </div>
+            </div>
+          </div>
+
+          {/* WhatsApp Join Button (Centered for all screens) */}
+          <div className="button-el w-full max-w-lg mx-auto animate-fade-in-up [animation-delay:600ms] opacity-0">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="group flex w-full items-center justify-between gap-4 rounded-[24px] border border-[#1fb84f] bg-[linear-gradient(180deg,#2be15f_0%,#10b43b_100%)] px-5 py-3.5 shadow-[0_10px_25px_rgba(19,179,60,0.25)] transition-transform duration-200 hover:scale-[1.01] active:scale-[0.99]"
+              className="group flex w-full items-center justify-between gap-4 rounded-[20px] border border-[#1fb84f] bg-[linear-gradient(180deg,#2be15f_0%,#10b43b_100%)] px-5 py-3 shadow-[0_10px_24px_rgba(19,179,60,0.2)] transition-transform duration-200 hover:scale-[1.01] active:scale-[0.99]"
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-sm overflow-hidden p-1.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm overflow-hidden p-1.5">
                   <img src={whatsappLogo} alt="WhatsApp Logo" className="h-full w-full object-contain" />
                 </div>
-                <span className="text-base font-extrabold text-white tracking-tight">
+                <span className="text-base font-extrabold text-white tracking-wide">
                   Join WhatsApp Community
                 </span>
               </div>
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#0ca73a] shadow-sm">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#0ca73a] shadow-sm transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowRight size={18} strokeWidth={3} />
               </div>
             </a>

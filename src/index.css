@@ -1,1 +1,132 @@
 @import "tailwindcss";
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(4deg);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 4.5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+/* Height-based responsive rules to fit short-height mobile & tablet screens without scrolling */
+@media (max-height: 740px) {
+  .logo-img {
+    height: 3.5rem !important; /* ~56px */
+  }
+  .headline-text {
+    font-size: 1.35rem !important;
+    line-height: 1.15 !important;
+  }
+  .desc-text {
+    font-size: 10px !important;
+    margin-top: 0.25rem !important;
+  }
+  .card-el {
+    min-height: 80px !important;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 16px !important;
+  }
+  .card-icon {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  .card-icon svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  .card-title {
+    font-size: 10px !important;
+  }
+  .card-desc {
+    display: none !important; /* Hide card descriptions on short devices to save space */
+  }
+  .banner-el {
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 16px !important;
+  }
+  .banner-icon {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+  .banner-icon svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  .banner-el p {
+    font-size: 11px !important;
+  }
+  .banner-el span {
+    font-size: 9px !important;
+  }
+  .button-el {
+    border-radius: 16px !important;
+  }
+  .button-el a {
+    padding: 0.5rem 1rem !important;
+    border-radius: 16px !important;
+  }
+  .button-el a span {
+    font-size: 13px !important;
+  }
+  .button-el a div {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  .button-el a svg {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+  .content-wrapper {
+    gap: 0.5rem !important;
+  }
+}
+
+/* Even more aggressive height query for extremely small mobile viewports (e.g., iPhone SE or short Androids) */
+@media (max-height: 620px) {
+  .logo-img {
+    height: 2.75rem !important; /* ~44px */
+  }
+  .headline-text {
+    font-size: 1.15rem !important;
+  }
+  .banner-el {
+    display: none !important; /* Hide community banner on very short screens to prioritize the CTA button */
+  }
+  .content-wrapper {
+    gap: 0.35rem !important;
+  }
+}
