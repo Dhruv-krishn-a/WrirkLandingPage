@@ -1,6 +1,7 @@
 import React from "react";
 import { Bell, BookOpen, FileSearch, Gift, Users, ArrowRight } from "lucide-react";
 import whatsappLogo from "./assets/whatsapp.png";
+import wrirkLogo from "./assets/wrirk_logo.png";
 
 export default function WrirkCommunityPoster() {
   const whatsappUrl = "https://chat.whatsapp.com/IUUfrrGfyBNH6exy1JzOEA";
@@ -35,7 +36,7 @@ Notifications`,
     {
       icon: Gift,
       title: "Free to Join",
-      desc: "100% free community. No hidden charges. Just value.",
+      desc: "Engage with a community of PhD scholars, faculty, and research enthusiasts.",
       accent: "#22b14c",
       bg: "rgba(34,177,76,0.10)",
     },
@@ -59,30 +60,11 @@ Notifications`,
         <div className="absolute left-4 top-[32%] h-9 w-9 rounded-full bg-[#e6f4ff] opacity-80" />
         <div className="absolute right-2 bottom-10 h-12 w-12 rounded-full bg-[#e6f4ff] opacity-80" />
 
-        <div className="absolute left-2 bottom-24 rotate-[-18deg] opacity-90">
-          <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 35L43 14L31 29L51 35L8 35Z" fill="#1f8fc6" opacity="0.95" />
-            <path d="M20 46L43 14" stroke="#1f8fc6" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="5 7" />
-          </svg>
-        </div>
-
         <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-1 flex-col justify-center px-4 py-4 md:px-8 lg:px-12 h-full overflow-hidden">
           
           {/* Top Centered Brand Header */}
           <div className="flex flex-col items-center text-center mt-1 lg:mt-3 shrink-0">
-            <div className="relative flex flex-col items-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full border-[4px] border-[#1a8eb8] bg-white shadow-[0_4px_12px_rgba(28,136,180,0.12)] sm:h-20 sm:w-20">
-                <div className="relative flex items-center justify-center">
-                  <span className="text-[36px] font-black leading-none tracking-[-0.08em] text-[#1698c7] sm:text-[44px]">W</span>
-                  <div className="absolute -right-0.5 top-0.5 h-12 w-1 rotate-[-34deg] rounded-full bg-[#1698c7] sm:h-16" />
-                </div>
-              </div>
-              <div className="mt-[-6px] text-[10px] font-semibold tracking-[0.24em] text-[#1698c7] sm:text-[11px]">WRIRK</div>
-            </div>
-
-            <h1 className="mt-1 text-2xl font-extrabold tracking-[-0.04em] text-[#1698c7] sm:text-3xl">
-              WRIRK
-            </h1>
+            <img src={wrirkLogo} alt="WRIRK Logo" className="h-28 sm:h-36 md:h-44 object-contain" />
 
             <div className="mt-1 flex items-center gap-3 text-xs font-semibold text-[#12203a] sm:text-sm">
               <span className="h-px w-12 bg-[#1698c7] sm:w-16" />
@@ -91,7 +73,7 @@ Notifications`,
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center w-full mt-3 lg:mt-6 mb-auto max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center w-full mt-3 lg:mt-6 lg:mb-auto max-w-6xl mx-auto">
             
             {/* Left Column: Headline, Banner, and Button */}
             <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left gap-4 lg:gap-6">
@@ -171,7 +153,7 @@ Notifications`,
                       <h2 className="whitespace-pre-line text-xs sm:text-sm font-extrabold leading-tight text-[#10193b]">
                         {item.title}
                       </h2>
-                      <p className="text-[10px] sm:text-xs leading-normal text-[#46556d] mt-2 hidden sm:block">
+                      <p className="text-[10px] sm:text-xs leading-normal text-[#46556d] mt-1.5">
                         {item.desc}
                       </p>
                     </article>
