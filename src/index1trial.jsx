@@ -1,7 +1,7 @@
 import React from "react";
 import { Bell, BookOpen, FileSearch, Gift, Users, ArrowRight } from "lucide-react";
-import whatsappLogo from "./assets/whatsapp.png";
-import wrirkLogo from "./assets/wrirk_logo.png";
+import whatsappLogo from "./assets/whatsapp.webp";
+import wrirkLogo from "./assets/wrirk_logo.webp";
 
 export default function WrirkCommunityPoster() {
   const whatsappUrl = "https://chat.whatsapp.com/IUUfrrGfyBNH6exy1JzOEA";
@@ -90,7 +90,7 @@ Notifications`,
           
           {/* Top Centered Brand Header */}
           <div className="flex flex-col items-center text-center mt-1 lg:mt-3 shrink-0">
-            <img src={wrirkLogo} alt="WRIRK Logo" className="logo-img h-20 sm:h-28 md:h-32 object-contain" />
+            <img src={wrirkLogo} alt="WRIRK Logo" className="logo-img h-20 sm:h-28 md:h-32 object-contain" fetchpriority="high" decoding="async" />
 
             <div className="mt-0.5 flex items-center gap-3 text-xs font-semibold text-[#12203a] sm:text-sm">
               <span className="h-px w-12 bg-[#1698c7] sm:w-16" />
