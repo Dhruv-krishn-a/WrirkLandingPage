@@ -86,11 +86,11 @@ Notifications`,
           </svg>
         </div>
 
-        <div className="content-wrapper relative z-10 w-full max-w-5xl mx-auto flex flex-1 flex-col justify-center items-center px-4 py-3 md:px-8 lg:px-12 gap-3 lg:gap-3.5 animate-fade-in-up">
+        <div className="content-wrapper relative z-10 w-full max-w-5xl mx-auto flex flex-1 flex-col justify-between items-center px-4 py-6 md:px-8 lg:px-12 h-full gap-3 lg:gap-3.5 animate-fade-in-up">
           
           {/* Top Centered Brand Header */}
-          <div className="flex flex-col items-center text-center mt-0.5 lg:mt-1 shrink-0">
-            <img src={wrirkLogo} alt="WRIRK Logo" className="logo-img h-16 sm:h-20 md:h-24 object-contain" />
+          <div className="flex flex-col items-center text-center mt-1 lg:mt-3 shrink-0">
+            <img src={wrirkLogo} alt="WRIRK Logo" className="logo-img h-20 sm:h-28 md:h-32 object-contain" />
 
             <div className="mt-0.5 flex items-center gap-3 text-xs font-semibold text-[#12203a] sm:text-sm">
               <span className="h-px w-12 bg-[#1698c7] sm:w-16" />
@@ -165,14 +165,14 @@ Notifications`,
               className="group flex w-full items-center justify-between gap-4 rounded-[20px] border border-[#1fb84f] bg-[linear-gradient(180deg,#2be15f_0%,#10b43b_100%)] px-5 py-3 shadow-[0_10px_24px_rgba(19,179,60,0.2)] transition-transform duration-200 hover:scale-[1.01] active:scale-[0.99]"
             >
               <div className="flex items-center gap-4">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm overflow-hidden p-1.5">
+                <div className="whatsapp-logo-container flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-sm overflow-hidden p-1.5">
                   <img src={whatsappLogo} alt="WhatsApp Logo" className="h-full w-full object-contain" />
                 </div>
                 <span className="text-base font-extrabold text-white tracking-wide">
                   Join WhatsApp Community
                 </span>
               </div>
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#0ca73a] shadow-sm transition-transform duration-300 group-hover:translate-x-1">
+              <div className="arrow-container flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#0ca73a] shadow-sm transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowRight size={18} strokeWidth={3} />
               </div>
             </a>

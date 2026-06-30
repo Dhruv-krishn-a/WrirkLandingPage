@@ -41,8 +41,8 @@
   animation: floatSlow 7s ease-in-out infinite;
 }
 
-/* Height-based responsive rules to fit short-height mobile & tablet screens without scrolling */
-@media (max-height: 740px) {
+/* Height-based responsive rules to fit short-height screens (MOBILE and TABLET ONLY) */
+@media (max-height: 740px) and (max-width: 1023px) {
   .logo-img {
     height: 3.5rem !important; /* ~56px */
   }
@@ -102,11 +102,15 @@
   .button-el a span {
     font-size: 13px !important;
   }
-  .button-el a div {
+  .whatsapp-logo-container {
     width: 2rem !important;
     height: 2rem !important;
   }
-  .button-el a svg {
+  .arrow-container {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  .arrow-container svg {
     width: 0.875rem !important;
     height: 0.875rem !important;
   }
@@ -115,8 +119,8 @@
   }
 }
 
-/* Even more aggressive height query for extremely small mobile viewports (e.g., iPhone SE or short Androids) */
-@media (max-height: 620px) {
+/* Even more aggressive height query for extremely small mobile viewports (MOBILE ONLY) */
+@media (max-height: 620px) and (max-width: 767px) {
   .logo-img {
     height: 2.75rem !important; /* ~44px */
   }
